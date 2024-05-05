@@ -35,7 +35,7 @@ s3_client = boto3.client(
 def strip_bucket_from_path(*, request: Any, **_kw):
     """Strips the bucket name from the path.
 
-    Our requests are proxied through an ALB, and we have the domain name matching teh bucket name.
+    Our requests are proxied through an ALB, and we have the domain name matching the bucket name.
     This can currently not be handled by boto3 and we need to manually alter the URL before signing the request
     from: https://private-s3-vpce.example.com/private-s3-vpce.example.com/test.html
     to: https://private-s3-vpce.example.com/test.html
